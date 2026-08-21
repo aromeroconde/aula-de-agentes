@@ -120,9 +120,9 @@
   ],
   "videoEmbedUrl": "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/preview",
   "videoViewUrl": "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/view",
-  "videoAccessNote": "La grabación requiere permiso sobre el archivo original de Google Drive.",
+  "videoAccessNote": "Grabación disponible en modo lectura para cualquier persona con el enlace.",
   "sources": {
-    "recording": "/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/Capacitacion IA-20260820_185246-Grabación de la reunión.mp4",
-    "transcript": "/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/Capacitacion IA 20-08-2026.docx"
+    "recording": "/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/001/Capacitacion IA-20260820_185246-Grabación de la reunión.mp4",
+    "transcript": "/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/001/Capacitacion IA 20-08-2026.docx"
   }
 }

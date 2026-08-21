@@ -31,14 +31,20 @@ function selectMoment(index) {
   renderFrames();
   const m = data.moments[index];
   document.querySelector("#active-transcript").innerHTML =
-    `<time>${m.time}</time><p>${m.text}</p><a class="open-moment" href="${data.videoViewUrl}?t=${m.seconds}s" target="_blank" rel="noreferrer">Abrir grabación en ${m.time} ↗</a><small class="video-access-note">${data.videoAccessNote || "La grabación conserva los permisos del archivo original."}</small>`;
+    `<time>${m.time}</time><p>${m.text}</p><a class="open-moment" href="${data.videoViewUrl}?t=${m.seconds}s" target="_blank" rel="noreferrer">Abrir grabación en ${m.time} ↗</a><small class="video-access-note">${data.videoAccessNote || "Grabación disponible en modo lectura desde su fuente original."}</small>`;
   const offset = Math.min(index * 12, 60);
   strip.style.setProperty("--strip-x", `${-offset}vw`);
 }
 function playVideo() {
   const frame = strip.querySelector(".frame.active");
   const moment = data.moments[activeIndex];
-  frame.innerHTML = `<iframe class="video-embed" src="${data.videoEmbedUrl}?start=${moment.seconds}" title="Grabación de la Clase ${classId} desde ${moment.time}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+  const separator = data.videoEmbedUrl.includes("?") ? "&" : "?";
+  const embedUrl = `${data.videoEmbedUrl}${separator}start=${moment.seconds}`;
+  frame.innerHTML = `<div class="video-player"><div class="video-loading" aria-live="polite"><span></span><strong>Preparando la grabación…</strong></div><iframe class="video-embed" src="${embedUrl}" title="Grabación de la Clase ${classId} desde ${moment.time}" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe><a class="video-fallback" href="${data.videoViewUrl}?t=${moment.seconds}s" target="_blank" rel="noreferrer">¿No inicia? Abrir en Google Drive ↗</a></div>`;
+  const iframe = frame.querySelector(".video-embed");
+  iframe.addEventListener("load", () => {
+    frame.querySelector(".video-loading")?.classList.add("is-hidden");
+  });
 }
 document.querySelectorAll('[data-action="play"]').forEach((b) =>
   b.addEventListener("click", () => {

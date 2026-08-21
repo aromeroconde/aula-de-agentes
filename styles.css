@@ -323,6 +323,56 @@ input:focus-visible {
   border: 0;
   background: black;
 }
+.video-player {
+  position: absolute;
+  inset: 0;
+  background: #050505;
+}
+.video-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.8rem;
+  color: var(--paper);
+  background: #050505;
+  font: 600 0.78rem var(--cond);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+.video-loading span {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--lime);
+  border-radius: 50%;
+  animation: video-spin 0.8s linear infinite;
+}
+.video-loading.is-hidden {
+  opacity: 0;
+}
+.video-fallback {
+  position: absolute;
+  z-index: 2;
+  right: 0.7rem;
+  bottom: 0.65rem;
+  padding: 0.35rem 0.55rem;
+  color: var(--paper);
+  background: rgba(0, 0, 0, 0.82);
+  font: 600 0.67rem var(--cond);
+  text-decoration: none;
+}
+.video-fallback:hover,
+.video-fallback:focus-visible {
+  color: var(--lime);
+}
+@keyframes video-spin {
+  to { transform: rotate(360deg); }
+}
 .rail-control {
   display: flex;
   align-items: center;

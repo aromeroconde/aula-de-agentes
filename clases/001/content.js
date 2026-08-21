@@ -2,7 +2,7 @@ window.CLASS_DATA = {
   classId: "001",
   fallbackTopics: ["agentes", "Café Raíz", "P&G", "verificación", "skills"],
   videoAccessNote:
-    "La grabación conserva los permisos del archivo en Google Drive.",
+    "Grabación disponible en modo lectura para cualquier persona con el enlace.",
   videoEmbedUrl:
     "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/preview",
   videoViewUrl:

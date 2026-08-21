@@ -24,7 +24,7 @@ La unidad principal no es un archivo ni un video aislado, sino una clase consult
 
 ## Operating Context
 
-Las grabaciones y transcripciones se guardan en `/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones`. El primer contenido es la capacitación de IA del 20 de agosto de 2026 y su demostración de agentes con Café Raíz.
+Las grabaciones y transcripciones se guardan en `/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/NNN`, usando una subcarpeta numérica por clase (`001`, `002`, `003`…). El primer contenido es la capacitación de IA del 20 de agosto de 2026 y su demostración de agentes con Café Raíz.
 
 ## Capabilities and Constraints
 
@@ -44,7 +44,7 @@ Nombre de trabajo: “Aula de Agentes”. La experiencia debe sentirse llamativa
 
 - Transcripción real `Capacitacion IA 20-08-2026.docx`, duración 1 h 42 min 25 s.
 - Archivos sintéticos y logo del caso Café Raíz.
-- Grabación real de la Clase 001 localizada en Google Drive y seis fotogramas extraídos en timestamps verificados. La reproducción conserva los permisos del archivo original.
+- Grabación real de la Clase 001 localizada en Google Drive y seis fotogramas extraídos en timestamps verificados. Está disponible para cualquier persona con el enlace en modo lector.
 - Registro central `data/classes.json` y skill `bitacora-de-clases` para incorporar nuevas sesiones sin rediseñar el producto.
 
 ## Product Principles

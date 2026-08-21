@@ -17,6 +17,19 @@ Sirve la carpeta con cualquier servidor estático y abre `index.html`. El sitio 
 
 ## Publicar una nueva clase
 
+Las fuentes se organizan por número de clase dentro de la carpeta maestra:
+
+```text
+Capacitaciones Jartones/
+├── 001/  # grabación y transcripción de la clase 1
+├── 002/  # grabación y transcripción de la clase 2
+└── 003/  # grabación y transcripción de la clase 3
+```
+
+Para incorporar una sesión nueva, crea la siguiente carpeta numérica con tres
+dígitos y guarda allí la grabación y la transcripción. La skill recorre esta
+estructura y agrupa automáticamente los archivos de cada clase.
+
 La skill `bitacora-de-clases` reconstruye el contenido y su generador compone los artefactos:
 
 ```bash
@@ -27,4 +40,5 @@ python3 ~/.codex/skills/bitacora-de-clases/scripts/create_class.py \
 
 El generador extrae fotogramas, crea `clases/NNN/`, produce el PDF y agrega la entrada a `data/classes.json`. Se niega a sobrescribir una clase existente.
 
-Las grabaciones se reproducen desde su ubicación remota para evitar duplicar videos de gran tamaño en el repositorio.
+Las grabaciones se reproducen desde su ubicación remota, con permiso de solo
+lectura por enlace, para evitar duplicar videos de gran tamaño en el repositorio.
