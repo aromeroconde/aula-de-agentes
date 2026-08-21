@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/resumen-clase-001.pdf",
+      "destination": "/clases/001/resumen.pdf",
+      "permanent": true
+    }
+  ]
 }

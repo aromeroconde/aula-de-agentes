@@ -66,6 +66,13 @@
   text-transform: uppercase;
 }
 
+.video-access-note {
+  display: block;
+  margin-top: 0.35rem;
+  color: #685f55;
+  font-size: 0.66rem;
+}
+
 @media (max-width: 650px) {
   .record-button,
   .summary-ticket button,

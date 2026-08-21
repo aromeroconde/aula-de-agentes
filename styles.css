@@ -937,6 +937,11 @@ footer button {
   }
 }
 @media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  .skip-link,
   .noise,
   .topbar,
   .workbench,
@@ -951,7 +956,7 @@ footer button {
   }
   .deep-summary {
     display: block;
-    padding: 1.5cm;
+    padding: 0;
     background: white;
     color: #111;
   }
@@ -959,21 +964,28 @@ footer button {
     max-width: none;
   }
   .summary-article h2 {
-    font-size: 32pt;
+    margin-bottom: 0.6cm;
+    font-size: 29pt;
   }
   .summary-article h3 {
-    font-size: 20pt;
+    margin-bottom: 0.35cm;
+    font-size: 18pt;
     break-after: avoid;
   }
   .summary-article p {
-    font-size: 11pt;
+    margin-bottom: 0.35cm;
+    font-size: 10.5pt;
   }
   .summary-article section {
-    break-inside: avoid-page;
-    margin-bottom: 1.3cm;
+    break-inside: auto;
+    margin-bottom: 0.75cm;
   }
   .standfirst {
-    font-size: 15pt;
+    margin-bottom: 1cm;
+    font-size: 13.5pt;
+  }
+  .summary-article .commitments {
+    break-inside: avoid-page;
   }
   .operating-rule {
     border: 1px solid #111;

@@ -44,7 +44,8 @@ Nombre de trabajo: “Aula de Agentes”. La experiencia debe sentirse llamativa
 
 - Transcripción real `Capacitacion IA 20-08-2026.docx`, duración 1 h 42 min 25 s.
 - Archivos sintéticos y logo del caso Café Raíz.
-- No hay una grabación reproducible localizada todavía; la interfaz debe mostrar ese estado con honestidad y quedar lista para enlazarla.
+- Grabación real de la Clase 001 localizada en Google Drive y seis fotogramas extraídos en timestamps verificados. La reproducción conserva los permisos del archivo original.
+- Registro central `data/classes.json` y skill `bitacora-de-clases` para incorporar nuevas sesiones sin rediseñar el producto.
 
 ## Product Principles
 

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "001",
+    "slug": "de-conversar-con-ia-a-crear-agentes",
+    "title": "De conversar con IA a crear agentes",
+    "date": "2026-08-20",
+    "dateLabel": "20 AGO 2026",
+    "duration": "01:42:25",
+    "durationSeconds": 6145,
+    "teacher": "Alejandro Romero Conde",
+    "summary": "Una sesión práctica sobre el salto del chat al agente: contexto persistente, información desordenada, análisis financiero, verificación y skills reutilizables.",
+    "thesis": "Lo importante no es la herramienta. Es el problema que resuelves.",
+    "topics": ["Agentes", "Café Raíz", "Verificación", "Skills"],
+    "poster": "clases/001/assets/frames/02-cafe-raiz.jpg",
+    "frames": [
+      "clases/001/assets/frames/01-tesis.jpg",
+      "clases/001/assets/frames/03-pyg.jpg",
+      "clases/001/assets/frames/05-skills.jpg"
+    ],
+    "href": "clases/001/",
+    "pdf": "clases/001/resumen.pdf",
+    "status": "published"
+  }
+]

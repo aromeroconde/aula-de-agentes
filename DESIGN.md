@@ -11,6 +11,8 @@ La experiencia debe conducir siempre por este recorrido:
 3. **Comprender el argumento completo:** el resumen editorial permite recuperar la sustancia sin recorrer toda la grabación.
 4. **Preguntar con evidencia:** cada respuesta vuelve a un pasaje o momento reconocible de la clase.
 
+Antes de ese recorrido existe una **biblioteca de montaje**: la portada presenta el archivo completo, ordena las clases por fecha y permite reconocer cada sesión antes de entrar. No es una cuadrícula de cursos; cada entrada se trata como un rollo de película con fotograma principal, secuencia, tesis y acciones editoriales.
+
 La promesa no es “aprender en una plataforma”, sino **volver a una conversación real y encontrar exactamente lo que se necesita**. La tecnología debe desaparecer detrás de esa tarea.
 
 ## 2. Principios no negociables

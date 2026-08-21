@@ -1,0 +1,128 @@
+{
+  "id": "002",
+  "title": "De conversar con IA a crear agentes — réplica de prueba",
+  "titleLines": ["De conversar con IA", "a crear agentes"],
+  "accentLineIndex": 1,
+  "date": "2026-08-20",
+  "dateLabel": "20 AGO 2026",
+  "duration": "01:42:25",
+  "durationSeconds": 6145,
+  "teacher": "Alejandro Romero Conde",
+  "teacherShort": "Alejandro",
+  "thesis": "El valor está en saber qué pedir y cómo revisar el resultado.",
+  "summaryTeaser": "La clase muestra el salto del chat al agente mediante archivos dispersos, un análisis financiero verificable y una skill reutilizable.",
+  "summaryTitle": "Una clase sobre delegar trabajo sin entregar el criterio.",
+  "summaryAccent": "sin entregar el criterio",
+  "standfirst": "La sesión partió del uso cotidiano del chat y avanzó hacia agentes con contexto, archivos y procedimientos. La demostración financiera reveló tanto la velocidad del agente como la obligación humana de verificar fórmulas, supuestos y recomendaciones.",
+  "readingMinutes": 4,
+  "topics": ["Agentes", "Café Raíz", "Verificación", "Skills"],
+  "sections": [
+    {
+      "id": "entrada",
+      "title": "Del chat al agente",
+      "paragraphs": [
+        "El chat puede responder preguntas, pero obliga a reconstruir el contexto al cambiar de conversación. La propuesta de la clase fue trabajar con agentes que conservan archivos, reglas y un objetivo reconocible."
+      ]
+    },
+    {
+      "id": "montaje",
+      "title": "Los archivos dispersos se vuelven contexto",
+      "paragraphs": [
+        "El caso práctico reunió gastos fijos, compras, ventas, cuentas por cobrar, movimientos bancarios, presupuestos y un logo. El agente podía leerlos aunque estuvieran sueltos y construir un P&G mensual."
+      ],
+      "rule": "Inventariar, calcular, contrastar y explicar antes de recomendar."
+    },
+    {
+      "id": "salida",
+      "title": "La skill vuelve repetible el criterio",
+      "paragraphs": [
+        "Después de verificar el análisis, el procedimiento se convirtió en una skill que podía entregar nuevamente P&G, punto de equilibrio, runway y escenarios editables."
+      ]
+    }
+  ],
+  "commitments": [
+    {
+      "status": "proposed",
+      "owner": null,
+      "dueDate": null,
+      "text": "Cada participante identifica un dolor repetitivo y una salida verificable para su primer agente."
+    }
+  ],
+  "moments": [
+    {
+      "time": "12:58",
+      "seconds": 778,
+      "title": "La tesis",
+      "text": "Usar un chat es útil, pero el contexto se pierde al cambiar de hilo; el siguiente paso es construir agentes para el trabajo cotidiano."
+    },
+    {
+      "time": "22:37",
+      "seconds": 1357,
+      "title": "La carpeta",
+      "text": "La demostración reúne gastos, compras, ventas, movimientos y presupuestos dispersos para trabajar sobre una carpeta como contexto."
+    },
+    {
+      "time": "29:37",
+      "seconds": 1777,
+      "title": "El resultado",
+      "text": "Con los datos disponibles, el encargo es consolidar mayo a agosto y construir un P&G mensual con un hallazgo principal."
+    }
+  ],
+  "knowledge": [
+    {
+      "question": "¿Qué diferencia un chat de un agente?",
+      "terms": ["chat", "agente", "contexto"],
+      "answer": "El chat responde dentro de un hilo; el agente trabaja con archivos, reglas y contexto persistente para ejecutar un flujo.",
+      "evidence": "12:58",
+      "certainty": "confirmed"
+    },
+    {
+      "question": "¿Qué archivos tenía Café Raíz?",
+      "terms": ["archivos", "carpeta", "gastos", "ventas"],
+      "answer": "Había gastos fijos, compras, ventas y cuentas por cobrar, movimientos bancarios, presupuestos y un logo.",
+      "evidence": "22:37",
+      "certainty": "confirmed"
+    },
+    {
+      "question": "¿Qué análisis se pidió?",
+      "terms": ["p&g", "pyg", "consolidar", "utilidad"],
+      "answer": "Se pidió consolidar mayo a agosto y construir un P&G mensual con ventas, costo de ventas, gastos fijos, utilidad estimada y el principal hallazgo.",
+      "evidence": "29:37",
+      "certainty": "confirmed"
+    }
+  ],
+  "evidenceChecks": [
+    {
+      "claim": "El chat pierde contexto al cambiar de conversación.",
+      "evidence": "12:58",
+      "sourceExcerpt": "cuando cambio de hilo o arranco una nueva conversación, tengo que volverle a dar todo el contexto"
+    },
+    {
+      "claim": "La demostración incluyó gastos fijos y compras.",
+      "evidence": "22:37",
+      "sourceExcerpt": "me generó aquí unos gastos fijos, me generó aquí unas compras"
+    },
+    {
+      "claim": "Se pidió un P&G mensual de mayo a agosto.",
+      "evidence": "29:37",
+      "sourceExcerpt": "consolida los datos de mayo a agosto y constrúyeme un PIG mensual"
+    },
+    {
+      "claim": "La verificación encontró fórmulas en filas equivocadas.",
+      "evidence": "39:41",
+      "sourceExcerpt": "la verificación detectó 2 fórmulas que apuntaban a la fila equivocada"
+    },
+    {
+      "claim": "Una skill permite reutilizar una habilidad.",
+      "evidence": "51:28",
+      "sourceExcerpt": "esa habilidad siempre la puede utilizar"
+    }
+  ],
+  "videoEmbedUrl": "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/preview",
+  "videoViewUrl": "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/view",
+  "videoAccessNote": "La grabación requiere permiso sobre el archivo original de Google Drive.",
+  "sources": {
+    "recording": "/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/Capacitacion IA-20260820_185246-Grabación de la reunión.mp4",
+    "transcript": "/Users/macair/Library/CloudStorage/GoogleDrive-ale.romero.conde@gmail.com/Mi unidad/SmartNexo/Capacitaciones Jartones/Capacitacion IA 20-08-2026.docx"
+  }
+}

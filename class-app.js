@@ -1,6 +1,10 @@
 const data = window.CLASS_DATA;
+const classId = data.classId || "001";
 const strip = document.querySelector("#film-strip");
-let activeIndex = 1;
+let activeIndex = Math.min(1, data.moments.length - 1);
+const timeline = document.querySelector("#timeline-range");
+timeline.max = String(Math.max(0, data.moments.length - 1));
+timeline.value = String(activeIndex);
 
 function iconPlay() {
   return '<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
@@ -23,18 +27,18 @@ function renderFrames() {
 }
 function selectMoment(index) {
   activeIndex = index;
-  document.querySelector("#timeline-range").value = index;
+  timeline.value = index;
   renderFrames();
   const m = data.moments[index];
   document.querySelector("#active-transcript").innerHTML =
-    `<time>${m.time}</time><p>${m.text}</p><a class="open-moment" href="${data.videoViewUrl}?t=${m.seconds}s" target="_blank" rel="noreferrer">Abrir grabación en ${m.time} ↗</a>`;
-  const widths = [0, -10, -22, -35, -48, -60];
-  strip.style.setProperty("--strip-x", `${widths[index]}vw`);
+    `<time>${m.time}</time><p>${m.text}</p><a class="open-moment" href="${data.videoViewUrl}?t=${m.seconds}s" target="_blank" rel="noreferrer">Abrir grabación en ${m.time} ↗</a><small class="video-access-note">${data.videoAccessNote || "La grabación conserva los permisos del archivo original."}</small>`;
+  const offset = Math.min(index * 12, 60);
+  strip.style.setProperty("--strip-x", `${-offset}vw`);
 }
 function playVideo() {
   const frame = strip.querySelector(".frame.active");
   const moment = data.moments[activeIndex];
-  frame.innerHTML = `<iframe class="video-embed" src="${data.videoEmbedUrl}?start=${moment.seconds}" title="Grabación de la Clase 001 desde ${moment.time}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+  frame.innerHTML = `<iframe class="video-embed" src="${data.videoEmbedUrl}?start=${moment.seconds}" title="Grabación de la Clase ${classId} desde ${moment.time}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
 }
 document.querySelectorAll('[data-action="play"]').forEach((b) =>
   b.addEventListener("click", () => {
@@ -51,9 +55,7 @@ document
         .scrollIntoView({ behavior: "smooth" }),
     ),
   );
-document
-  .querySelector("#timeline-range")
-  .addEventListener("input", (e) => selectMoment(Number(e.target.value)));
+timeline.addEventListener("input", (e) => selectMoment(Number(e.target.value)));
 renderFrames();
 
 const messages = document.querySelector("#messages");
@@ -84,9 +86,8 @@ function answer(question) {
   return ranked[0].score
     ? ranked[0].item
     : {
-        answer:
-          "No encontré un pasaje suficientemente directo para responder eso con seguridad. Puedes preguntar por agentes, Café Raíz, P&G, errores, skills, automatización o el primer agente recomendado.",
-        evidence: "Clase 001 completa",
+        answer: `No encontré un pasaje suficientemente directo para responder eso con seguridad. Puedes preguntar por ${data.fallbackTopics?.join(", ") || "los temas principales de esta sesión"}.`,
+        evidence: `Clase ${classId} completa`,
       };
 }
 function submitQuestion(question) {
