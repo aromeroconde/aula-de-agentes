@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a09" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta
+      name="description"
+      content="Aula de Agentes: grabaciones, resúmenes profundos y respuestas basadas en las clases de Alejandro Romero Conde."
+    />
+    <title>Aula de Agentes — Clase 001</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="overrides.css" />
+  </head>
+  <body>
+    <!--
+  THESIS: Una clase no es un archivo: es una película que puede reproducirse, desmontarse por momentos y volver a conversar. Rechaza el portal educativo de tarjetas.
+  OWN-WORLD: Mesa de montaje en negro, naranja de cinta, marfil de papel y fotogramas reales; banda perforada, marcas de grasa y controles rectos.
+  STORY: El visitante reconoce la clase, reproduce un momento, comprende el argumento completo y pregunta con evidencia.
+  FIRST VIEWPORT: Título editorial arriba; una banda de película cruza el centro con el video activo; resumen y pregunta cuelgan debajo. Reproducir vive dentro del fotograma.
+  FORM: Mesa de montaje audiovisual, candidato asignado 5; seed 9545a25b.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#inicio" aria-label="Aula de Agentes, inicio"
+        >Aula de <span>Agentes</span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="#clase">Clase</a><a href="#resumen">Resumen</a
+        ><a href="#preguntar">Preguntar</a>
+      </nav>
+      <button class="record-button" data-action="play">
+        <span aria-hidden="true"></span> Reproducir clase
+      </button>
+    </header>
+    <main id="contenido">
+      <section class="workbench" id="inicio" aria-labelledby="class-title">
+        <div class="title-block">
+          <div class="slate">
+            <span>CLASE 001</span><span>20 AGO 2026</span><span>01:42:25</span>
+          </div>
+          <h1 id="class-title">
+            De conversar<br />con IA <i>a crear</i><br />agentes
+          </h1>
+        </div>
+        <blockquote class="grease-note">
+          Lo importante no es la herramienta.<br />Es el problema que
+          resuelves.<cite>— Alejandro</cite>
+        </blockquote>
+        <div class="film-stage" id="clase">
+          <div class="perforations top" aria-hidden="true"></div>
+          <div
+            class="film-strip"
+            id="film-strip"
+            role="list"
+            aria-label="Momentos de la clase"
+          ></div>
+          <div class="perforations bottom" aria-hidden="true"></div>
+        </div>
+        <div class="rail-control">
+          <span>00:00</span
+          ><label class="sr-only" for="timeline-range"
+            >Recorrer momentos de la clase</label
+          ><input
+            type="range"
+            id="timeline-range"
+            min="0"
+            max="5"
+            value="1"
+            step="1"
+          /><span>01:42:25</span>
+        </div>
+        <div class="hanging-notes">
+          <article class="transcript-slip" id="active-transcript">
+            <time>22:37</time>
+            <p>
+              La carpeta se convierte en el contexto del proyecto: gastos,
+              compras, ventas, banco y presupuesto dejan de estar sueltos.
+            </p>
+            <a
+              class="open-moment"
+              href="https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/view?t=1357s"
+              target="_blank"
+              rel="noreferrer"
+              >Abrir grabación en 22:37 ↗</a
+            >
+          </article>
+          <article class="summary-ticket">
+            <div>
+              <span>RESUMEN PROFUNDO</span><strong>12 min de lectura</strong>
+            </div>
+            <p>
+              La clase explica por qué un agente no es un chat más largo, cómo
+              trabajar con información real y por qué la verificación sigue
+              siendo humana.
+            </p>
+            <button data-scroll="#resumen">
+              Leer el resumen completo <span aria-hidden="true">→</span>
+            </button>
+          </article>
+          <article class="question-ticket">
+            <label for="quick-question"
+              >¿Qué quieres preguntarle a la clase?</label
+            >
+            <div>
+              <input
+                id="quick-question"
+                placeholder="Escribe una pregunta…"
+              /><button id="quick-send" aria-label="Enviar pregunta">→</button>
+            </div>
+            <small
+              >Busca en la transcripción y vuelve con el momento exacto.</small
+            >
+          </article>
+        </div>
+      </section>
+      <section
+        class="deep-summary"
+        id="resumen"
+        aria-labelledby="summary-title"
+      >
+        <aside class="summary-index">
+          <span class="vertical-label">WORKPRINT / 001</span>
+          <div class="tape-label">RESUMEN<br />DE MONTAJE</div>
+          <nav aria-label="Índice del resumen">
+            <a href="#idea-central">La idea central</a
+            ><a href="#caso-cafe">El caso Café Raíz</a
+            ><a href="#verificacion">La verificación</a
+            ><a href="#skills">El salto a las skills</a
+            ><a href="#criterio">El criterio humano</a>
+          </nav>
+          <a
+            class="print-button"
+            id="print-summary"
+            href="resumen-clase-001.pdf"
+            download
+            >Descargar PDF <span aria-hidden="true">↓</span></a
+          >
+        </aside>
+        <article class="summary-article">
+          <h2 id="summary-title">
+            Una clase sobre <i>delegar trabajo</i>, no sobre coleccionar
+            herramientas.
+          </h2>
+          <p class="standfirst">
+            La sesión del 20 de agosto comenzó con una incomodidad muy concreta:
+            usamos inteligencia artificial todos los días, pero seguimos
+            tratándola como una ventanilla a la que hacemos preguntas aisladas.
+            El resultado puede ser útil, aunque todavía nos obliga a reconstruir
+            el problema cada vez. La clase propuso dar el siguiente paso: crear
+            agentes que trabajen con contexto, archivos, reglas y un objetivo
+            reconocible.
+          </p>
+          <section id="idea-central">
+            <h3>Del chat que responde al agente que trabaja</h3>
+            <p>
+              Conversar con un modelo sirve para explorar, redactar y pensar. El
+              límite aparece cuando cambia el hilo o comienza una conversación
+              nueva: se pierde el contexto y la persona debe volver a explicar
+              quién es, qué está haciendo y dónde está la información. Un
+              proyecto o una carpeta compartida cambia esa relación. El agente
+              puede leer materiales estables, conservar las instrucciones y
+              continuar un trabajo sin empezar desde cero.
+            </p>
+            <p>
+              La idea no fue presentar una definición académica de “agente”. Se
+              mostró como una forma práctica de delegar: la persona identifica
+              el dolor, decide qué resultado necesita y aporta la información;
+              el agente inventaría, relaciona, calcula, redacta o propone. La
+              pregunta valiosa deja de ser “¿cuál es el prompt perfecto?” y pasa
+              a ser “¿qué trabajo necesito resolver y cómo sabré que quedó
+              bien?”.
+            </p>
+            <blockquote>
+              “El valor que tenemos los que estamos aquí es que sabemos qué
+              vamos a pedir y cómo lo vamos a pedir.”<cite>29:37</cite>
+            </blockquote>
+          </section>
+          <section id="caso-cafe">
+            <h3>
+              Café Raíz: cuando cinco archivos se convierten en una decisión
+            </h3>
+            <p>
+              La demostración utilizó un negocio ficticio con información
+              deliberadamente desordenada. En una carpeta había gastos fijos; en
+              otra hoja, compras con vencimientos; en otra, ventas y cartera;
+              además existían movimientos bancarios, un presupuesto y un logo.
+              Esa dispersión imitaba la realidad de un negocio pequeño: los
+              datos existen, pero no necesariamente viven en una estructura
+              perfecta.
+            </p>
+            <p>
+              El primer encargo al agente no fue calcular. Fue revisar todos los
+              archivos, explicar qué representaba cada uno y señalar qué
+              información faltaba o debía tratarse con cuidado. Ese paso es
+              esencial porque obliga a distinguir hechos, supuestos, saldos y
+              proyecciones antes de mezclarlos. Solo después se pidió consolidar
+              mayo a agosto, construir un P&amp;G mensual y preparar una hoja de
+              cálculo con ventas, costo de ventas, gastos fijos, utilidad
+              estimada y el principal hallazgo.
+            </p>
+            <p>
+              El resultado reveló una tensión que una tabla aislada podía
+              esconder: el negocio conservaba dinero en la cuenta, pero operaba
+              por debajo de su punto de equilibrio. La caja inicial estaba
+              financiando pérdidas mensuales. El hallazgo no era “hay poca
+              caja”, sino “el modelo todavía no cierra”. Esa diferencia
+              convirtió la automatización en criterio de negocio.
+            </p>
+          </section>
+          <section id="verificacion">
+            <h3>La velocidad no reemplaza la verificación</h3>
+            <p>
+              Durante la clase surgió una pregunta pertinente: ¿qué ocurre si
+              los archivos tienen errores, números negativos o estados
+              contradictorios? La respuesta de la propia demostración fue más
+              valiosa que una promesa. La revisión detectó dos fórmulas que
+              apuntaban a filas equivocadas y una clasificación que leía gasto
+              operativo como costo de ventas. El error inflaba la utilidad en
+              once millones de pesos.
+            </p>
+            <p>
+              El episodio dejó una regla clara: el agente debe mostrar
+              supuestos, cuadrar saldos y contrastar los resultados con cálculos
+              independientes. También puede existir un segundo agente curador o
+              evaluador que revise lo producido por el primero. La IA reduce el
+              trabajo mecánico; no convierte una cifra en verdad por el simple
+              hecho de presentarla con seguridad.
+            </p>
+            <div class="operating-rule">
+              <span>REGLA OPERATIVA</span
+              ><strong
+                >Antes de recomendar: inventariar → auditar → calcular →
+                contrastar → explicar.</strong
+              >
+            </div>
+          </section>
+          <section id="skills">
+            <h3>
+              Una skill convierte el buen criterio en un procedimiento repetible
+            </h3>
+            <p>
+              La segunda mitad de la sesión introdujo las skills. Una skill es
+              una instrucción reutilizable que describe cómo debe trabajar el
+              agente: qué archivos buscar, qué validar, qué pasos seguir, qué
+              entregar y qué debe evitar. Puede vivir dentro de un proyecto o
+              estar disponible globalmente.
+            </p>
+            <p>
+              En el ejemplo se creó una habilidad para diagnosticar la
+              viabilidad de un negocio. La skill debía inventariar archivos,
+              detectar saldos corridos que no cerraran, resolver contradicciones
+              entre estados, construir P&amp;G y punto de equilibrio, producir
+              escenarios editables y entregar un veredicto explícito. La próxima
+              vez ya no sería necesario reconstruir todas esas instrucciones:
+              bastaría con pedir el análisis.
+            </p>
+            <p>
+              Lo potente es que la skill no queda congelada. Si el informe
+              incluye secciones inútiles, si el orden no ayuda o si las
+              recomendaciones no reflejan el criterio del dueño, se corrige.
+              Después de varias iteraciones, el resultado comienza a parecerse a
+              la manera en que esa persona habría hecho el trabajo.
+            </p>
+          </section>
+          <section id="criterio">
+            <h3>El humano sigue siendo el estratega</h3>
+            <p>
+              La clase cerró reforzando una frontera: una recomendación se puede
+              automatizar; una decisión sensible requiere contexto y aprobación.
+              El agente puede preparar un correo, ordenar una propuesta de pagos
+              o señalar un mensaje urgente. Enviar, pagar, borrar o comprometer
+              a alguien exige una confirmación humana explícita.
+            </p>
+            <p>
+              El punto de partida recomendado para cada participante fue su
+              propio dolor: aquello que consume tiempo, se repite y tiene una
+              salida verificable. No hace falta comenzar por un agente
+              gigantesco. Conviene traer una muestra controlada de la
+              información, construir un flujo pequeño, probarlo y corregirlo. El
+              primer buen agente es el que devuelve tiempo sin quitarle a la
+              persona el control.
+            </p>
+          </section>
+          <section class="commitments">
+            <h3>Lo que quedó para continuar</h3>
+            <ul>
+              <li>
+                <span>Confirmado</span> Alejandro enviaría la grabación y un
+                resumen de la clase.
+              </li>
+              <li>
+                <span>Ruta siguiente</span> Profundizar en skills y convertir un
+                trabajo repetitivo en una habilidad reutilizable.
+              </li>
+              <li>
+                <span>Ejercicio recomendado</span> Cada participante identifica
+                un dolor real, los archivos que intervienen y la decisión que
+                espera preparar.
+              </li>
+            </ul>
+            <p class="source-note">
+              Los compromisos confirmados se separan de las propuestas
+              didácticas. Ningún responsable o fecha fue inventado.
+            </p>
+          </section>
+        </article>
+      </section>
+      <section class="chat-section" id="preguntar" aria-labelledby="chat-title">
+        <div class="chat-context">
+          <h2 id="chat-title">
+            Pregúntale a la clase.<br /><i>Vuelve al momento.</i>
+          </h2>
+          <p>
+            El chat consulta el contenido de la sesión y responde con el pasaje
+            que respalda la respuesta. Esta primera versión funciona sin exponer
+            credenciales.
+          </p>
+          <div class="suggestions" aria-label="Preguntas sugeridas">
+            <button>¿Qué diferencia un chat de un agente?</button
+            ><button>¿Qué descubrió el análisis de Café Raíz?</button
+            ><button>¿Por qué hubo que corregir el P&amp;G?</button
+            ><button>¿Qué es una skill y para qué sirve?</button
+            ><button>¿Con qué agente debería empezar?</button>
+          </div>
+        </div>
+        <div class="chat-workprint">
+          <header>
+            <div>
+              <span class="status-light" aria-hidden="true"></span
+              ><strong>CLASE 001</strong>
+            </div>
+            <span>TRANSCRIPCIÓN INDEXADA</span>
+          </header>
+          <div class="messages" id="messages" aria-live="polite">
+            <div class="message assistant">
+              <p>
+                Estoy listo. Pregúntame por las ideas, la demostración
+                financiera, las dudas de los participantes o los siguientes
+                pasos.
+              </p>
+              <small>Basado en la transcripción completa</small>
+            </div>
+          </div>
+          <form id="chat-form">
+            <label for="question">Tu pregunta</label>
+            <div>
+              <input
+                id="question"
+                autocomplete="off"
+                placeholder="Escribe tu pregunta…"
+              /><button type="submit">
+                Preguntar <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark" href="#inicio">Aula de <span>Agentes</span></a>
+      <p>Una biblioteca viva de las clases de Alejandro Romero Conde.</p>
+      <a class="footer-download" href="resumen-clase-001.pdf" download
+        >Descargar resumen en PDF ↓</a
+      >
+    </footer>
+    <script src="content.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

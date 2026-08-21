@@ -1,0 +1,88 @@
+.print-button {
+  display: inline-block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.footer-download {
+  color: var(--orange);
+  font: 600 0.72rem var(--cond);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.record-button {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--ink);
+  min-height: 48px;
+  padding-inline: 1.25rem;
+}
+
+.record-button span {
+  background: var(--ink);
+  box-shadow: 0 0 0 4px rgba(10, 10, 9, 0.14);
+}
+
+.frame.active {
+  transform: translateY(-8px) scale(1.008);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.68),
+    0 0 0 1px var(--orange);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s,
+    box-shadow 0.35s ease;
+}
+
+.transcript-slip,
+.question-ticket,
+.chat-workprint {
+  background-color: var(--paper);
+  background-image: url("assets/paper-grain.png");
+  background-blend-mode: multiply;
+}
+
+.summary-index,
+.summary-ticket,
+.chat-section {
+  background-image: url("assets/tape-grain.png");
+  background-blend-mode: soft-light;
+}
+
+.transcript-slip::before,
+.chat-workprint::before {
+  background-image: url("assets/tape-grain.png");
+  background-blend-mode: multiply;
+}
+
+.open-moment {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: var(--orange-dark);
+  font: 700 0.7rem var(--cond);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 650px) {
+  .record-button,
+  .summary-ticket button,
+  .print-button,
+  .suggestions button,
+  .footer-download {
+    min-height: 48px;
+    font-size: 0.78rem;
+  }
+
+  .suggestions button {
+    padding-block: 0.9rem;
+  }
+
+  .question-ticket button,
+  .chat-workprint form button {
+    min-width: 52px;
+    min-height: 52px;
+  }
+}
