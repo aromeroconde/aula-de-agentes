@@ -34,7 +34,11 @@ Las grabaciones y transcripciones se guardan en `/Users/macair/Library/CloudStor
 - Resumen profundo, cronología, conceptos y compromisos.
 - Descarga o impresión del resumen como PDF.
 - Chat de recuperación sobre el contenido indexado de las clases; la primera publicación funciona sin exponer credenciales.
-- Preparado para sustituir la recuperación local por un modelo generativo mediante una variable privada de Vercel.
+- Chat generativo conectado desde un nodo privado de Vercel al proxy central del
+  VPS. La clave real de OpenAI no sale del proxy. El chat conserva el hilo
+  reciente, resuelve referencias como «esa skill», responde solo desde el
+  contexto verificado de la clase y devuelve los minutos de respaldo.
+- Recuperación local como respaldo si el servicio de IA no está disponible.
 - No se inventan grabaciones, compromisos, testimonios ni respuestas sin respaldo en la transcripción.
 
 ## Brand Commitments

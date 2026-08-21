@@ -90,6 +90,8 @@ timeline.addEventListener("input", (e) => selectMoment(Number(e.target.value)));
 renderFrames();
 
 const messages = document.querySelector("#messages");
+const chatHistory = [];
+let lastLocalItem = null;
 function normalize(value) {
   return value
     .toLowerCase()
@@ -99,7 +101,14 @@ function normalize(value) {
 function addMessage(text, role = "assistant", evidence = "") {
   const el = document.createElement("div");
   el.className = `message ${role}`;
-  el.innerHTML = `<p>${text}</p>${evidence ? `<small>Momento de la clase · ${evidence}</small>` : ""}`;
+  const paragraph = document.createElement("p");
+  paragraph.textContent = text;
+  el.append(paragraph);
+  if (evidence) {
+    const source = document.createElement("small");
+    source.textContent = `Momento de la clase · ${evidence}`;
+    el.append(source);
+  }
   messages.append(el);
   messages.scrollTop = messages.scrollHeight;
 }
@@ -114,14 +123,21 @@ function answer(question) {
       ),
     }))
     .sort((a, b) => b.score - a.score);
-  return ranked[0].score
-    ? ranked[0].item
-    : {
+  const followUp = /\b(esa|ese|eso|anterior|cuentame mas|amplia|profundiza|como funcionaba|que se creo)\b/.test(q);
+  const item = ranked[0].score ? ranked[0].item : followUp ? lastLocalItem : null;
+  if (item) {
+    const repeatedTopic = item === lastLocalItem && followUp && item.detail;
+    lastLocalItem = item;
+    return repeatedTopic
+      ? { answer: item.detail, evidence: item.detailEvidence || item.evidence }
+      : item;
+  }
+  return {
         answer: `No encontré un pasaje suficientemente directo para responder eso con seguridad. Puedes preguntar por ${data.fallbackTopics?.join(", ") || "los temas principales de esta sesión"}.`,
         evidence: `Clase ${classId} completa`,
       };
 }
-function submitQuestion(question) {
+async function submitQuestion(question) {
   const q = question.trim();
   if (!q) return;
   addMessage(q, "user");
@@ -130,11 +146,33 @@ function submitQuestion(question) {
   wait.innerHTML = "<p>Buscando en la clase</p>";
   messages.append(wait);
   messages.scrollTop = messages.scrollHeight;
-  setTimeout(() => {
+  try {
+    const response = await fetch("/api/chat/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        classId,
+        question: q,
+        history: chatHistory.slice(-8),
+      }),
+    });
+    if (!response.ok) throw new Error("AI chat unavailable");
+    const result = await response.json();
+    wait.remove();
+    addMessage(result.answer, "assistant", result.evidence);
+    chatHistory.push(
+      { role: "user", content: q },
+      { role: "assistant", content: result.answer },
+    );
+  } catch (error) {
     wait.remove();
     const result = answer(q);
     addMessage(result.answer, "assistant", result.evidence);
-  }, 260);
+    chatHistory.push(
+      { role: "user", content: q },
+      { role: "assistant", content: result.answer },
+    );
+  }
 }
 document.querySelector("#chat-form").addEventListener("submit", (e) => {
   e.preventDefault();

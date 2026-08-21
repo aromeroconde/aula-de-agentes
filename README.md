@@ -4,14 +4,20 @@ Biblioteca audiovisual de las clases de Alejandro Romero Conde. La portada reún
 
 ## Ver localmente
 
-Sirve la carpeta con cualquier servidor estático y abre `index.html`. El sitio no requiere compilación ni credenciales.
+Ejecuta el proyecto con Vercel Dev para incluir el chat con inteligencia
+artificial. El nodo del servidor usa `PROXY_URL` y `PROXY_TOKEN` para llamar al
+proxy privado del VPS. La clave real del proveedor permanece exclusivamente en
+el proxy y ninguna credencial se envía al navegador.
 
 ## Contenido
 
 - `index.html`: portada y catálogo general.
 - `data/classes.json`: registro central de clases publicadas.
+- `data/chat-context.json`: contexto conversacional verificado de cada clase.
 - `clases/NNN/`: página, contenido, PDF y fotogramas de cada sesión.
 - `class-app.js`: interacción compartida del timeline y el chat.
+- `api/chat.js`: nodo de IA con memoria breve, límites de alcance, evidencia y
+  conexión al proxy del VPS.
 - `library.js`: renderizado del catálogo.
 - `DESIGN.md`: sistema visual y decisiones de diseño.
 

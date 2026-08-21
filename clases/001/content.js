@@ -116,7 +116,10 @@ window.CLASS_DATA = {
       ],
       answer:
         "Una skill es un procedimiento reutilizable que especifica entradas, validaciones, pasos, entregables y límites. Puede ser global o pertenecer a un proyecto. En la clase se creó una para analizar la viabilidad de un negocio sin reescribir el flujo cada vez.",
+      detail:
+        "La skill creada fue la de análisis de viabilidad de un negocio. Recibía Excel, CSV, extractos y facturación; inventariaba y auditaba las fuentes, calculaba P&G, punto de equilibrio, runway y escenarios, y entregaba un modelo Excel más un informe. Se corrigió para eliminar cifras fijas de Café Raíz, manejar meses incompletos y explicar cómo recalcular los datos. Quedó global y privada en la máquina de Alejandro, lista para ejecutarse nuevamente sin reconstruir las instrucciones.",
       evidence: "50:38 · 56:14",
+      detailEvidence: "56:14 · 57:51 · 1:08:07 · 1:21:50",
     },
     {
       terms: [

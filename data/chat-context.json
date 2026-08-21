@@ -1,0 +1,51 @@
+{
+  "001": {
+    "title": "De conversar con IA a crear agentes",
+    "date": "20 de agosto de 2026",
+    "duration": "1:42:25",
+    "teacher": "Alejandro Romero Conde",
+    "purpose": "Mostrar cómo pasar de conversar con una IA a construir agentes que trabajan con carpetas, reglas, archivos reales, verificación y procedimientos reutilizables.",
+    "topics": [
+      {
+        "name": "Chat, agente y contexto",
+        "evidence": "12:58 · 22:37 · 29:37",
+        "content": "Un chat responde dentro de una conversación; un agente trabaja con un contexto persistente compuesto por carpeta, archivos, reglas y objetivo. En Café Raíz se reunieron gastos, compras, ventas, cartera, banco y presupuesto para ejecutar un flujo verificable."
+      },
+      {
+        "name": "Hallazgo financiero de Café Raíz",
+        "evidence": "29:37 · 39:41 · 41:48",
+        "content": "El P&G mostró que el negocio operaba por debajo del punto de equilibrio. La caja inicial estaba financiando pérdidas; un saldo positivo no implicaba rentabilidad. La verificación detectó dos fórmulas mal referenciadas y un gasto operativo tratado como costo de ventas, lo que inflaba la utilidad en once millones."
+      },
+      {
+        "name": "Qué es una skill",
+        "evidence": "27:13 · 50:38 · 51:28",
+        "content": "Una skill es una habilidad o metodología reutilizable. Conserva reglas, estructura, entradas, validaciones, pasos y entregables para no reconstruir las instrucciones en cada conversación. Puede ser propia de un proyecto o global y puede invocarse por nombre, slash o mediante hooks que reconocen la intención."
+      },
+      {
+        "name": "Skill creada durante la clase",
+        "evidence": "49:34 · 56:14 · 57:51",
+        "content": "Durante la clase se creó una skill privada y global llamada análisis de viabilidad de un negocio. Recibe archivos financieros reales como Excel, CSV, extractos y facturación; convierte fuentes dispersas y contradictorias en un diagnóstico repetible. No era una skill de análisis post mortem: esa fue otra skill mencionada antes como ejemplo."
+      },
+      {
+        "name": "Procedimiento de la skill de viabilidad",
+        "evidence": "56:14 · 1:08:07 · 1:21:50",
+        "content": "La skill inventaría las fuentes, audita calidad y fórmulas, normaliza la información, calcula P&G, punto de equilibrio, runway de caja y escenarios, contrasta resultados y entrega un veredicto explícito. Fue corregida para eliminar fechas y cifras fijas de Café Raíz, manejar meses incompletos, indicar cómo recalcular el Excel y resolver la aparente contradicción entre margen sano y caja agotada."
+      },
+      {
+        "name": "Entregables de la skill de viabilidad",
+        "evidence": "57:51 · 1:21:50 · 1:23:26",
+        "content": "Produce un modelo Excel de viabilidad con P&G, punto de equilibrio, runway y una tabla de escenarios con celdas editables para probar supuestos. También genera un informe siguiendo una plantilla. Al ejecutarla otra vez conserva esa estructura sin que el usuario tenga que explicar todo de nuevo."
+      },
+      {
+        "name": "Dónde quedó y cómo se usa la skill",
+        "evidence": "52:35 · 1:03:39 · 1:09:59",
+        "content": "Se configuró como una skill global, privada y almacenada localmente en la máquina de Alejandro. Puede llamarse con slash o simplemente pidiendo un análisis de viabilidad; el hook identifica qué skill ejecutar. Las skills públicas de la comunidad son distintas y pueden descargarse y personalizarse."
+      },
+      {
+        "name": "Automatización y control humano",
+        "evidence": "1:09:34 · 1:14:43 · 1:39:12",
+        "content": "Una skill puede programarse para ejecutarse periódicamente sobre nuevos archivos. Las automatizaciones que deben funcionar con el computador apagado necesitan un entorno permanente como una VPS. El humano conserva estrategia, aprobación y corrección; al actualizar la skill, los siguientes informes se acercan progresivamente a su criterio."
+      }
+    ]
+  }
+}
