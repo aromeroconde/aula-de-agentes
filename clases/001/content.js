@@ -5,6 +5,8 @@ window.CLASS_DATA = {
     "Grabación disponible en modo lectura para cualquier persona con el enlace.",
   videoEmbedUrl:
     "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/preview",
+  videoMediaUrl:
+    "https://xwz4vb8ec72qmyf2.public.blob.vercel-storage.com/clases/001/grabacion.mp4",
   videoViewUrl:
     "https://drive.google.com/file/d/1nKFT6elNd2UfhfwJN5aLID54ufs8sYi7/view",
   moments: [

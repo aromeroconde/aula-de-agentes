@@ -38,6 +38,31 @@ function selectMoment(index) {
 function playVideo() {
   const frame = strip.querySelector(".frame.active");
   const moment = data.moments[activeIndex];
+  if (data.videoMediaUrl) {
+    frame.innerHTML = `<div class="video-player"><div class="video-loading" aria-live="polite"><span></span><strong>Preparando la grabación…</strong></div><video class="video-native" controls playsinline preload="metadata" poster="${moment.image}" crossorigin="anonymous" aria-label="Grabación de la Clase ${classId} desde ${moment.time}"><source src="${data.videoMediaUrl}" type="video/mp4">Tu navegador no puede reproducir este video.</video><a class="video-fallback" href="${data.videoViewUrl}?t=${moment.seconds}s" target="_blank" rel="noreferrer">Abrir fuente original ↗</a></div>`;
+    const video = frame.querySelector(".video-native");
+    const loading = frame.querySelector(".video-loading");
+    video.addEventListener(
+      "loadedmetadata",
+      () => {
+        video.currentTime = Math.min(moment.seconds, Math.max(0, video.duration - 0.1));
+      },
+      { once: true },
+    );
+    video.addEventListener("canplay", () => loading?.classList.add("is-hidden"), {
+      once: true,
+    });
+    video.addEventListener(
+      "error",
+      () => {
+        loading?.classList.add("has-error");
+        if (loading) loading.innerHTML = "<strong>No pudimos cargar el video aquí.</strong>";
+      },
+      { once: true },
+    );
+    video.play().catch(() => loading?.classList.add("is-hidden"));
+    return;
+  }
   const separator = data.videoEmbedUrl.includes("?") ? "&" : "?";
   const embedUrl = `${data.videoEmbedUrl}${separator}start=${moment.seconds}`;
   frame.innerHTML = `<div class="video-player"><div class="video-loading" aria-live="polite"><span></span><strong>Preparando la grabación…</strong></div><iframe class="video-embed" src="${embedUrl}" title="Grabación de la Clase ${classId} desde ${moment.time}" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe><a class="video-fallback" href="${data.videoViewUrl}?t=${moment.seconds}s" target="_blank" rel="noreferrer">¿No inicia? Abrir en Google Drive ↗</a></div>`;
@@ -49,7 +74,7 @@ function playVideo() {
 document.querySelectorAll('[data-action="play"]').forEach((b) =>
   b.addEventListener("click", () => {
     document.querySelector("#clase").scrollIntoView({ behavior: "smooth" });
-    setTimeout(playVideo, 350);
+    playVideo();
   }),
 );
 document

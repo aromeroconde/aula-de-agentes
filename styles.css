@@ -315,13 +315,17 @@ input:focus-visible {
 .frame.active .active-play {
   display: grid;
 }
-.video-embed {
+.video-embed,
+.video-native {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
   background: black;
+}
+.video-native {
+  object-fit: contain;
 }
 .video-player {
   position: absolute;
@@ -355,11 +359,15 @@ input:focus-visible {
 .video-loading.is-hidden {
   opacity: 0;
 }
+.video-loading.has-error {
+  color: var(--orange);
+  pointer-events: auto;
+}
 .video-fallback {
   position: absolute;
   z-index: 2;
   right: 0.7rem;
-  bottom: 0.65rem;
+  top: 0.65rem;
   padding: 0.35rem 0.55rem;
   color: var(--paper);
   background: rgba(0, 0, 0, 0.82);

@@ -40,5 +40,8 @@ python3 ~/.codex/skills/bitacora-de-clases/scripts/create_class.py \
 
 El generador extrae fotogramas, crea `clases/NNN/`, produce el PDF y agrega la entrada a `data/classes.json`. Se niega a sobrescribir una clase existente.
 
-Las grabaciones se reproducen desde su ubicación remota, con permiso de solo
-lectura por enlace, para evitar duplicar videos de gran tamaño en el repositorio.
+Google Drive conserva las fuentes originales y sirve como respaldo. Para la
+reproducción dentro del aula, cada grabación se publica en el almacén público
+`aula-de-agentes-videos` de Vercel Blob bajo `clases/NNN/grabacion.mp4`. Así el
+sitio usa un reproductor HTML5 nativo, sin depender del visor embebido de Drive
+ni duplicar videos pesados dentro del repositorio.

@@ -29,7 +29,8 @@ Las grabaciones y transcripciones se guardan en `/Users/macair/Library/CloudStor
 ## Capabilities and Constraints
 
 - Catálogo de clases y detalle de cada sesión.
-- Reproductor conectado a la URL de cada grabación cuando exista.
+- Reproductor HTML5 conectado a una fuente multimedia con soporte de rangos;
+  Google Drive se conserva como archivo original y enlace de respaldo.
 - Resumen profundo, cronología, conceptos y compromisos.
 - Descarga o impresión del resumen como PDF.
 - Chat de recuperación sobre el contenido indexado de las clases; la primera publicación funciona sin exponer credenciales.
